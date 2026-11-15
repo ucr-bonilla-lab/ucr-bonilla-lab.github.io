@@ -1,18 +1,52 @@
 /* ==========================================================================
-   1. DESIGN SYSTEM VARIABLES (Edit here to update the whole site)
+   1. DESIGN SYSTEM VARIABLES (Light Default + Dark Theme Override)
    ========================================================================== */
 :root {
-  --bg-main: #FAF9F6;         /* Warm Alabaster background */
-  --bg-card: #FFFFFF;         /* Pure white for cards */
-  --text-primary: #111827;    /* Deep charcoal for high-contrast reading */
-  --text-muted: #4B5563;      /* Soft slate for subtitles & descriptions */
-  --ucr-blue: #003DA5;        /* UCR Deep Blue primary accent */
-  --ucr-blue-hover: #002D7A;  /* Darker blue on hover */
-  --ucr-gold: #D97706;        /* Warm gold/amber highlight */
-  --border-subtle: #E5E7EB;   /* Soft card border */
-  --radius-md: 12px;          /* Rounded card corners */
+  --bg-main: #FAF9F6;               /* Warm Alabaster background */
+  --bg-card: #FFFFFF;               /* Pure white for cards */
+  --header-bg: rgba(250, 249, 246, 0.9);
+  --avatar-bg: #E0E7FF;
+  --text-primary: #111827;          /* Deep charcoal ink */
+  --text-muted: #4B5563;            /* Soft slate subtitles */
+  --ucr-blue: #003DA5;              /* UCR Deep Blue */
+  --ucr-blue-hover: #002D7A;
+  --ucr-gold: #D97706;              /* Warm gold highlight */
+  --border-subtle: #E5E7EB;
+  --radius-md: 12px;
   --font-main: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
 }
+
+[data-theme="dark"] {
+  --bg-main: #0B1120;               /* Deep Midnight Slate */
+  --bg-card: #131C31;               /* Elevated dark slate cards */
+  --header-bg: rgba(11, 17, 32, 0.85);
+  --avatar-bg: #1E293B;
+  --text-primary: #F8FAFC;          /* Crisp soft white */
+  --text-muted: #94A3B8;            /* Cool silver-slate */
+  --ucr-blue: #38BDF8;              /* Luminous cyan-blue */
+  --ucr-blue-hover: #7DD3FC;
+  --ucr-gold: #FBBF24;              /* Warm UCR gold */
+  --border-subtle: #1E293B;
+}
+
+/* Theme Toggle Button Styling */
+.theme-toggle {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-primary);
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-family: var(--font-main);
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: border-color 0.2s ease, transform 0.1s ease;
+}
+
+.theme-toggle:hover {
+  border-color: var(--ucr-blue);
+}
+
 
 /* ==========================================================================
    2. GLOBAL RESET & BASE TYPOGRAPHY
@@ -51,7 +85,7 @@ a:hover {
    3. TOP NAVIGATION BAR
    ========================================================================== */
 header {
-  background-color: rgba(250, 249, 246, 0.9);
+  background-color: var(--header-bg);
   backdrop-filter: blur(8px);
   border-bottom: 1px solid var(--border-subtle);
   position: sticky;
@@ -261,7 +295,7 @@ section {
   width: 72px;
   height: 72px;
   border-radius: 50%;
-  background-color: #E0E7FF;
+  background-color: var(--avatar-bg);
   color: var(--ucr-blue);
   display: flex;
   align-items: center;
