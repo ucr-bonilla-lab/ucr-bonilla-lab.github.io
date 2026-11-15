@@ -23,7 +23,7 @@
           <li><a href="#team">Team</a></li>
           <li><a href="#publications">Publications</a></li>
           <li><a href="#join">Join Us</a></li>
-          <li><button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">Dark Mode</button></li>
+          <li><button id="theme-toggle" class="theme-toggle" aria-label="Toggle light mode">Light Mode</button></li>
         </ul>
       </nav>
     </div>
@@ -138,22 +138,22 @@
 
     // 1. Check if the visitor previously saved a preference
     const savedTheme = localStorage.getItem('theme');
-    if (savedTheme === 'dark') {
-      root.setAttribute('data-theme', 'dark');
-      toggleBtn.textContent = 'Light Mode';
+    if (savedTheme === 'light') {
+      root.setAttribute('data-theme', 'light');
+      toggleBtn.textContent = 'Dark Mode';
     }
 
     // 2. Flip the theme when clicked and save their choice
     toggleBtn.addEventListener('click', () => {
-      const isDark = root.getAttribute('data-theme') === 'dark';
-      if (isDark) {
+      const isLight = root.getAttribute('data-theme') === 'light';
+      if (isLight) {
         root.removeAttribute('data-theme');
-        localStorage.setItem('theme', 'light');
-        toggleBtn.textContent = 'Dark Mode';
-      } else {
-        root.setAttribute('data-theme', 'dark');
         localStorage.setItem('theme', 'dark');
         toggleBtn.textContent = 'Light Mode';
+      } else {
+        root.setAttribute('data-theme', 'light');
+        localStorage.setItem('theme', 'light');
+        toggleBtn.textContent = 'Dark Mode';
       }
     });
   </script>
