@@ -1,7 +1,23 @@
 /* ==========================================================================
-   1. DESIGN SYSTEM VARIABLES (Light Default + Dark Theme Override)
+   1. DESIGN SYSTEM VARIABLES (Dark Default + Light Theme Override)
    ========================================================================== */
 :root {
+  --bg-main: #0B1120;               /* Deep Midnight Slate (Default) */
+  --bg-card: #131C31;               /* Elevated dark slate cards */
+  --header-bg: rgba(11, 17, 32, 0.85);
+  --avatar-bg: #1E293B;
+  --text-primary: #F8FAFC;          /* Crisp soft white */
+  --text-muted: #94A3B8;            /* Cool silver-slate */
+  --ucr-blue: #38BDF8;              /* Luminous cyan-blue */
+  --ucr-blue-hover: #7DD3FC;
+  --ucr-gold: #FBBF24;              /* Warm UCR gold */
+  --btn-text: #0B1120;              /* Dark text on bright cyan button */
+  --border-subtle: #1E293B;
+  --radius-md: 12px;
+  --font-main: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+[data-theme="light"] {
   --bg-main: #FAF9F6;               /* Warm Alabaster background */
   --bg-card: #FFFFFF;               /* Pure white for cards */
   --header-bg: rgba(250, 249, 246, 0.9);
@@ -11,22 +27,8 @@
   --ucr-blue: #003DA5;              /* UCR Deep Blue */
   --ucr-blue-hover: #002D7A;
   --ucr-gold: #D97706;              /* Warm gold highlight */
+  --btn-text: #FFFFFF;              /* White text on deep blue button */
   --border-subtle: #E5E7EB;
-  --radius-md: 12px;
-  --font-main: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
-}
-
-[data-theme="dark"] {
-  --bg-main: #0B1120;               /* Deep Midnight Slate */
-  --bg-card: #131C31;               /* Elevated dark slate cards */
-  --header-bg: rgba(11, 17, 32, 0.85);
-  --avatar-bg: #1E293B;
-  --text-primary: #F8FAFC;          /* Crisp soft white */
-  --text-muted: #94A3B8;            /* Cool silver-slate */
-  --ucr-blue: #38BDF8;              /* Luminous cyan-blue */
-  --ucr-blue-hover: #7DD3FC;
-  --ucr-gold: #FBBF24;              /* Warm UCR gold */
-  --border-subtle: #1E293B;
 }
 
 /* Theme Toggle Button Styling */
@@ -178,7 +180,7 @@ nav a:hover {
 
 .btn-primary {
   background-color: var(--ucr-blue);
-  color: #FFFFFF;
+  color: var(--btn-text);
 }
 
 .btn-primary:hover {
